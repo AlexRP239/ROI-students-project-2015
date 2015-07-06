@@ -7,7 +7,7 @@
 
 apply plugin: 'war'
 apply plugin: 'jetty'
-apply plugin: 'idea'
+//apply plugin: 'idea'
 
 war {
     baseName = "playbox"
@@ -34,6 +34,7 @@ dependencies {
 
     compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
     compile 'org.springframework.data:spring-data-jpa:1.8.1.RELEASE'
+    compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
     compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
     compile 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
     runtime 'com.h2database:h2:1.4.+'
