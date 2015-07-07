@@ -10,9 +10,10 @@ import java.util.List;
  * @author apavelchuk
  * @since 07.07.2015.
  */
-@Repository
+@Repository("userDao")
 @Transactional
-public class UseDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao {
+
     @Override
     public SimpleUserEntityForDatabaseTest saveOrUpdate(SimpleUserEntityForDatabaseTest user) {
         return null;
