@@ -26,6 +26,6 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/mvc/*</url-pattern>
     </servlet-mapping>
 </web-app>
