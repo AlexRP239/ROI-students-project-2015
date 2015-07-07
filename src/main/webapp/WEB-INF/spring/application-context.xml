@@ -28,4 +28,6 @@
     </bean>
 
     <tx:annotation-driven/>
+    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
 </beans>
