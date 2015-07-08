@@ -17,11 +17,11 @@ public class User {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
-    @Column(name = "firstName", nullable = true, length = 50, unique = true)
+    @Column(name = "firstName", nullable = false, length = 50, unique = true)
     private String firstName;
-    @Column(name = "lastName", nullable = true, length = 50, unique = true)
+    @Column(name = "lastName", nullable = false, length = 50, unique = true)
     private String lastName;
-    @Column(name = "email", nullable = true, length = 50)
+    @Column(name = "email", nullable = false, length = 50)
     private String email;
     @Column(name = "githubLogin", length = 20)
     private String githubLogin;
