@@ -6,7 +6,7 @@ import java.util.Date;
 
 
 /**
- * @author apavelchuk
+ * @author olezhek28, karlson35
  * @since 06.07.2015.
  */
 @Entity
