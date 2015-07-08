@@ -15,7 +15,7 @@ import java.util.List;
  */
 /**
  * @author karlson35
- * @since 08.07.2015.
+ * @since 08.07.2015
  */
 @Repository("userDao")
 @Transactional

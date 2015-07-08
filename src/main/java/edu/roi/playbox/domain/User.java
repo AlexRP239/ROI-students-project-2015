@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * @author olezhek28, karlson35
- * @since 06.07.2015.
+ * @since 08.07.2015.
  */
 @Entity
 @Table(name = "User", uniqueConstraints={@UniqueConstraint(columnNames={"firstName", "lastName"})})
