@@ -1,6 +1,6 @@
 package edu.roi.playbox.domain.dao;
 
-import edu.roi.playbox.domain.SimpleUserEntityForDatabaseTest;
+import edu.roi.playbox.domain.User;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
@@ -15,22 +15,22 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
 
     @Override
-    public SimpleUserEntityForDatabaseTest saveOrUpdate(SimpleUserEntityForDatabaseTest user) {
+    public User saveOrUpdate(User user) {
         return null;
     }
 
     @Override
-    public void remove(SimpleUserEntityForDatabaseTest user) {
+    public void remove(User user) {
 
     }
 
     @Override
-    public List<SimpleUserEntityForDatabaseTest> findAll() {
+    public List<User> findAll() {
         return null;
     }
 
     @Override
-    public List<SimpleUserEntityForDatabaseTest> findActive() {
+    public List<User> findActive() {
         return null;
     }
 }

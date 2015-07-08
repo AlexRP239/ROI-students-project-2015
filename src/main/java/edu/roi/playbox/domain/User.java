@@ -10,8 +10,8 @@ import java.util.Date;
  * @since 06.07.2015.
  */
 @Entity
-@Table(name = "User")
-public class SimpleUserEntityForDatabaseTest {
+@Table(name = "User", uniqueConstraints={@UniqueConstraint(columnNames={"firstName", "lastName"})})
+public class User {
 
     @Id
     @GeneratedValue
