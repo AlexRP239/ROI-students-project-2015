@@ -11,6 +11,11 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "User", uniqueConstraints={@UniqueConstraint(columnNames={"firstName", "lastName"})})
+
+@NamedQueries({
+        @NamedQuery(name = "User.findAll", query = "SELECT c.FIRSTNAME, c.LASTNAME from USER c "),
+        @NamedQuery(name = "User.findActive", query = "SELECT c.FIRSTNAME, c.LASTNAME from USER c WHERE c.GITHUBLOGIN <> null ")
+})
 public class User {
 
     @Id
