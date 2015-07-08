@@ -17,9 +17,9 @@ public class User {
     @GeneratedValue
     @Column(name = "id")
     private Long id;
-    @Column(name = "firstName", nullable = false, length = 50, unique = true)
+    @Column(name = "firstName", nullable = false, length = 50)
     private String firstName;
-    @Column(name = "lastName", nullable = false, length = 50, unique = true)
+    @Column(name = "lastName", nullable = false, length = 50)
     private String lastName;
     @Column(name = "email", nullable = false, length = 50)
     private String email;
