@@ -1,26 +1,36 @@
 package edu.roi.playbox.domain;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
+
 
 /**
  * @author apavelchuk
  * @since 06.07.2015.
  */
 @Entity
+@Table(name = "User")
 public class SimpleUserEntityForDatabaseTest {
 
     @Id
     @GeneratedValue
+    @Column(name = "id")
     private Long id;
-
-    private String name;
+    @Column(name = "firstName", nullable = true, length = 50, unique = true)
+    private String firstName;
+    @Column(name = "lastName", nullable = true, length = 50, unique = true)
+    private String lastName;
+    @Column(name = "email", nullable = true, length = 50)
     private String email;
-    @Column(unique = true, nullable = false)
+    @Column(name = "githubLogin", length = 20)
     private String githubLogin;
+    @Column(name = "skypeLogin", length = 20)
+    private String skypeLogin;
+    @Column(name = "description", length = 4096)
+    private String description;
+    @Column(name = "creationDate")
+    private Date creationDate;
 
     public Long getId() {
         return id;
@@ -30,12 +40,20 @@ public class SimpleUserEntityForDatabaseTest {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -52,5 +70,29 @@ public class SimpleUserEntityForDatabaseTest {
 
     public void setGithubLogin(String githubLogin) {
         this.githubLogin = githubLogin;
+    }
+
+    public String getSkypeLogin() {
+        return skypeLogin;
+    }
+
+    public void setSkypeLogin(String skypeLogin) {
+        this.skypeLogin = skypeLogin;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }
