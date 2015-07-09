@@ -17,6 +17,7 @@
         <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
     </bean>
 
+    <!-- Зачем это все надо описано здесь http://www.studytrails.com/frameworks/spring/spring-hibernate-jpa.jsp -->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="default"/>

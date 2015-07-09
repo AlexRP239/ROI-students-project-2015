@@ -14,14 +14,15 @@ import java.util.List;
  */
 public class ReadFileTest {
 
-    @Test
+
+    @Test(expected = CharacterCodingException.class)
     public void readDarkenery() throws Exception {
         System.out.println("Java 8 style круче");
         final List<String> lines = Files.readAllLines(Paths.get("src/test/resources/Darkenery.txt"), Charset.forName("windows-1251"));
         lines.forEach(System.out::println);
     }
 
-    @Test(expected = CharacterCodingException.class)
+    @Test
     public void readDarkeneryFailed() throws Exception {
         System.out.println("Java 6 style проще");
         final List<String> lines = Files.readAllLines(Paths.get("src/test/resources/Darkenery.txt"));

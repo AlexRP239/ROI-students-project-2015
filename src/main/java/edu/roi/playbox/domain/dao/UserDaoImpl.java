@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -21,11 +22,16 @@ import java.util.List;
 @Transactional
 public class UserDaoImpl implements UserDao {
 
-    public EntityManager em = Persistence.createEntityManagerFactory("COLIBRI").createEntityManager();
+    /**
+     * Эта аннотация автоматически устанавливает нужное нам значение благодаря
+     * {@link org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor}
+     */
+    @PersistenceContext
+    private EntityManager em;
 
     @Override
     public User saveOrUpdate(User user) {
-        return null;
+        return null; // см
     }
 
     @Override
@@ -43,5 +49,9 @@ public class UserDaoImpl implements UserDao {
     public List<User> findActive() {
         TypedQuery<User> namedQuery = em.createNamedQuery("User.findActive",User.class);
         return namedQuery.getResultList();
+    }
+
+    public void setEm(EntityManager em) {
+        this.em = em;
     }
 }

@@ -5,7 +5,6 @@
  */
 package playbox;
 
-import edu.roi.playbox.domain.SimpleUserEntityForDatabaseTest;
 import edu.roi.playbox.domain.dao.UserDao;
 import java.io.IOException;
 import java.io.PrintWriter;

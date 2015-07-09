@@ -12,9 +12,11 @@ import java.util.Date;
 @Entity
 @Table(name = "User", uniqueConstraints={@UniqueConstraint(columnNames={"firstName", "lastName"})})
 
+// NamedQuery использует JPA query language (JPQL) примеры смотри тут
+// http://docs.oracle.com/javaee/6/tutorial/doc/bnbtl.html
 @NamedQueries({
-        @NamedQuery(name = "User.findAll", query = "SELECT c.FIRSTNAME, c.LASTNAME from USER c "),
-        @NamedQuery(name = "User.findActive", query = "SELECT c.FIRSTNAME, c.LASTNAME from USER c WHERE c.GITHUBLOGIN <> null ")
+        @NamedQuery(name = "User.findAll", query = "SELECT c from User c "),
+        @NamedQuery(name = "User.findActive", query = "SELECT c from User c WHERE c.githubLogin is not null ")
 })
 public class User {
 
