@@ -23,9 +23,21 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/mvc/*</url-pattern>
     </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Servlet</servlet-name>
+    <servlet-class>playbox.Servlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>Servlet</servlet-name>
+    <url-pattern>/credentials</url-pattern>
+  </servlet-mapping>
+ 
 </web-app>
