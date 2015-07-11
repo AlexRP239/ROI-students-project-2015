@@ -1,0 +1,1 @@
+INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Alexey', 'Pavelchuk', 'AlexRP239', 'AlexRP239', 'alex.pavelchuk@gmail.com')
