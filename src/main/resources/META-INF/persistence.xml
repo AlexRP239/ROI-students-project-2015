@@ -5,16 +5,5 @@
 <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>edu.roi.playbox.domain.User</class>
-
-    <properties>
-        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-        <property name="hibernate.hbm2ddl.auto" value="update" />
-
-        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-        <!-- http://www.h2database.com/html/features.html#database_url -->
-        <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:playbox"/>
-        <property name="javax.persistence.jdbc.user" value="sa"/>
-        <property name="javax.persistence.jdbc.password" value=""/>
-    </properties>
 </persistence-unit>
 </persistence>
