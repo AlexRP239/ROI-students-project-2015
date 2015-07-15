@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+        <!--конфигурация  application-context xml файла (шапка)-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -14,7 +15,7 @@
             <constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
         </bean>-->
 
-    <!--бин вэб сервера, задается метод и нициализации, уничтожения, создается через конструктор с параметрами value; webAllowOthers-?-->
+    <!--конфигурация бина вэб сервера, задается метод и нициализации, уничтожения, создается через конструктор с параметрами value; webAllowOthers-?-->
     <bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"
           destroy-method="stop">
         <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
@@ -22,11 +23,14 @@
 
     <!-- Зачем это все надо описано здесь http://www.studytrails.com/frameworks/spring/spring-hibernate-jpa.jsp -->
 
+    <!--конфигурация бина db.property файла-->
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:db.properties"/>
     </bean>
 
+    <!--конфигурация бина фабрики entityManager-ов; задается unit конфигурации фабрики (находится в persistence.xml);
+        задаются свойства jpa из db.properties; задается jpaVendorAdapter (что это такое?)-->
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="default"/>
@@ -45,20 +49,27 @@
         </property>
     </bean>
 
+    <!--конфигурация бина менеджера транзакций, в поле entityManagerFactory подключается зависимость на бин entityManagerFactory-->
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
+    <!--разрешает конфигурацию транзакций с помощью аннотаций-->
     <tx:annotation-driven/>
 
 
 <!-- Description : Scans the classpath for annotated components that will be auto-registered as Spring beans.
     By default, the Spring-provided @Component, @Repository, @Service, and @Controller stereotypes will be detected. -->
     <!--<context:component-scan base-package="edu.roi.playbox.domain.dao"/>-->
+
+    <!--сканируем пакет edu.roi.playbox и
+        автоматически создаем бины помеченные аннотациями @component,@service,@repository,@controller-->
     <context:component-scan base-package="edu.roi.playbox"/>
 
+    <!--какой-то непонятный бин-->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
+    <!--создаем бин dataSource, параметры из db.properties-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>
@@ -66,6 +77,7 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
+    <!--инициализируем базу данных из файла db-user-data.sql-->
         <jdbc:initialize-database data-source="dataSource">
             <jdbc:script location="classpath:sql/db-user-data.sql"/>
         </jdbc:initialize-database>
