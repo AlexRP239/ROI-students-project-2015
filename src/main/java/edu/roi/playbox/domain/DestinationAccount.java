@@ -10,15 +10,51 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "DestinationAccount")
 
+enum PaymentMethod {
+    CREDIT_CARD,
+    BANK_ACCOUNT;
+
+    @Column(name = "displayName")
+    private String displayName;
+    @Column(name = "htmlTemplateName")
+    private String htmlTemplateName;
+    @Column(name = "serviceBeanName")
+    private String serviceBeanName;
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getServiceBeanName() {
+        return serviceBeanName;
+    }
+
+    public void setServiceBeanName(String serviceBeanName) {
+        this.serviceBeanName = serviceBeanName;
+    }
+
+    public String getHtmlTemplateName() {
+        return htmlTemplateName;
+    }
+
+    public void setHtmlTemplateName(String htmlTemplateName) {
+        this.htmlTemplateName = htmlTemplateName;
+    }
+}
 
 public class DestinationAccount {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
     private Long id;
-    // @Column(name = "paymentMethod")
-    //private PaymentMethod paymentMethod;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "paymentMethod")
+    private PaymentMethod paymentMethod;
     @Column(name = "amount",precision = 10, scale = 2)
     private BigDecimal amount;
     @Column(name = "maxAccountAmount",precision = 10, scale = 2)
@@ -35,6 +71,14 @@ public class DestinationAccount {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public PaymentMethod getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
     public Boolean getEnabled() {

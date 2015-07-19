@@ -22,7 +22,6 @@ public class User {
 
     @Id
     @GeneratedValue
-    @Column(name = "id")
     private Long id;
     @Column(name = "firstName", nullable = false, length = 50)
     private String firstName;
