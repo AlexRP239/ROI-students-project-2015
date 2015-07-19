@@ -15,7 +15,7 @@
             <constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
         </bean>-->
 
-    <!--конфигурация бина вэб сервера, задается метод и нициализации, уничтожения, создается через конструктор с параметрами value; webAllowOthers-?-->
+    <!--конфигурация бина вэб сервера, задается метод инициализации, уничтожения, создается через конструктор с параметрами value; webAllowOthers-?-->
     <bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"
           destroy-method="stop">
         <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
