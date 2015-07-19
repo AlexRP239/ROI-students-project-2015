@@ -77,8 +77,8 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <!--инициализируем базу данных из файла db-user-data.sql-->
-        <jdbc:initialize-database data-source="dataSource">
+    <!--инициализируем базу данных из файла db-user-data.sql только для in-memory database-->
+<!--        <jdbc:initialize-database data-source="dataSource">
             <jdbc:script location="classpath:sql/db-user-data.sql"/>
-        </jdbc:initialize-database>
+        </jdbc:initialize-database>-->
 </beans>
