@@ -33,7 +33,7 @@ public class Payment {
     @Column(name = "invoiceId")
     private String invoiceId;
 
-    @Column(name = "amount")
+    @Column(name = "amount", precision = 10, scale = 2)
     private BigDecimal amount;
 
     @Column(name = "customer")
@@ -48,9 +48,11 @@ public class Payment {
     @Column(name = "userAccountId")
     private String userAccountId;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created")
     private Date created;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated")
     private Date updated;
 

@@ -35,6 +35,7 @@ public class Customer {
     @Column(name = "blocked", nullable = false)
     private Boolean blocked;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "expired")
     private Date expired;
 
