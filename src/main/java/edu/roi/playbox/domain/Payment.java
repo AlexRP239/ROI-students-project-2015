@@ -11,14 +11,14 @@ import java.util.Date;
 @Entity
 @Table(name = "Payment", uniqueConstraints={@UniqueConstraint(columnNames={"customerId", "invoiceId"})})
 
-enum PaymentStatus {
-    INITIATED,
-    POSTED,
-    COMPLETED,
-    ERROR,
-    AUTHORIZATION_REQUIRED,
-    CLEARED
-}
+//enum PaymentStatus {
+//    INITIATED,
+//    POSTED,
+//    COMPLETED,
+//    ERROR,
+//    AUTHORIZATION_REQUIRED,
+//    CLEARED
+//}
 
 
 public class Payment {

@@ -1,13 +1,13 @@
 package edu.roi.playbox.domain;
 
 /**
- * Уже реализовано (на всякий случай)
+ * РЈР¶Рµ СЂРµР°Р»РёР·РѕРІР°РЅРѕ (РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№)
  * Created by AlexRP239 on 19.07.2015.
  */
 public enum PaymentMethod {
 
-    CREDIT_CARD("Кредитная карта", "credit_card", "creditCardPaymentService"),
-    BANK_ACCOUNT("Банковский перевод", "bank_account", "bankAccountPaymentService");
+    CREDIT_CARD("РљСЂРµРґРёС‚РЅР°СЏ РєР°СЂС‚Р°", "credit_card", "creditCardPaymentService"),
+    BANK_ACCOUNT("Р‘Р°РЅРєРѕРІСЃРєРёР№ РїРµСЂРµРІРѕРґ", "bank_account", "bankAccountPaymentService");
 
 
     private final String displayName;

@@ -10,23 +10,23 @@ import java.util.List;
 public interface CustomerDao {
 
     /**
-     * Сохраняет нового (если id == null) или обновляет существующего
+     * РЎРѕС…СЂР°РЅСЏРµС‚ РЅРѕРІРѕРіРѕ (РµСЃР»Рё id == null) РёР»Рё РѕР±РЅРѕРІР»СЏРµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ
      */
     Customer saveOrUpdate(Customer customer);
 
     /**
-     * Возвращает существующего кастомера если есть (не важно с каким статусом)
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ РєР°СЃС‚РѕРјРµСЂР° РµСЃР»Рё РµСЃС‚СЊ (РЅРµ РІР°Р¶РЅРѕ СЃ РєР°РєРёРј СЃС‚Р°С‚СѓСЃРѕРј)
      */
     Customer findById(Long customerId);
 
     /**
-     * Возвращает существующего кастомера только если expired < текущего времени и blocked = null или blocked = false
+     * Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ РєР°СЃС‚РѕРјРµСЂР° С‚РѕР»СЊРєРѕ РµСЃР»Рё expired < С‚РµРєСѓС‰РµРіРѕ РІСЂРµРјРµРЅРё Рё blocked = null РёР»Рё blocked = false
      */
     Customer findActive(Long customerId);
 
     List<Customer> findAll();
 
-//    на будущее
+//    РЅР° Р±СѓРґСѓС‰РµРµ
 //    List<Customer> findActive();
 //    List<Customer> findBlocked();
 //    List<Customer> findExpired();

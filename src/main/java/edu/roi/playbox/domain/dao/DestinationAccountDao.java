@@ -10,12 +10,12 @@ import java.util.List;
 public interface DestinationAccountDao {
 
     /**
-     * Сохраняет нового (если id == null) или обновляет существующего
+     * РЎРѕС…СЂР°РЅСЏРµС‚ РЅРѕРІРѕРіРѕ (РµСЃР»Рё id == null) РёР»Рё РѕР±РЅРѕРІР»СЏРµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ
      */
     DestinationAccount saveOrUpdate(DestinationAccount customer);
 
     /**
-     * Возврашает спосок всех аккаунтов у который enabled = true
+     * Р’РѕР·РІСЂР°С€Р°РµС‚ СЃРїРѕСЃРѕРє РІСЃРµС… Р°РєРєР°СѓРЅС‚РѕРІ Сѓ РєРѕС‚РѕСЂС‹Р№ enabled = true
      */
     List<DestinationAccount> findEnabled();
 }

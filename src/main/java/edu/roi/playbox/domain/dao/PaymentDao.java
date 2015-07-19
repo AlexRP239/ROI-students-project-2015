@@ -7,8 +7,8 @@ import edu.roi.playbox.domain.Payment;
  */
 public interface PaymentDao {
     /**
-     * Сохраняет нового (если id == null) или обновляет существующего
-     * В этом же методе указываются даты created и modified!
+     * РЎРѕС…СЂР°РЅСЏРµС‚ РЅРѕРІРѕРіРѕ (РµСЃР»Рё id == null) РёР»Рё РѕР±РЅРѕРІР»СЏРµС‚ СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµРіРѕ
+     * Р’ СЌС‚РѕРј Р¶Рµ РјРµС‚РѕРґРµ СѓРєР°Р·С‹РІР°СЋС‚СЃСЏ РґР°С‚С‹ created Рё modified!
      */
     Payment saveOrUpdate(Payment customer);
 
