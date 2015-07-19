@@ -50,15 +50,15 @@ public class Servlet extends HttpServlet {
         pw.println("<th>О себе</th>");
         pw.println("<tr>");
         
-        List userList = userDao.findAll();
-        for(int i = 0 ; i< userList.size();i++){
-            User user = (User) userList.get(i);
+        List<User> userList = userDao.findAll();
+        for (User anUserList : userList) {
+            User user = (User) anUserList;
             pw.println("<tr>");
-            pw.println("<td>"+user.getFirstName()+"</td>");
-            pw.println("<td>"+user.getLastName()+"</td>");
-            pw.println("<td>"+user.getSkypeLogin()+"</td>");
-            pw.println("<td>"+user.getGithubLogin()+"</td>");
-            pw.println("<td>"+user.getDescription()+"</td>");
+            pw.println("<td>" + user.getFirstName() + "</td>");
+            pw.println("<td>" + user.getLastName() + "</td>");
+            pw.println("<td>" + user.getSkypeLogin() + "</td>");
+            pw.println("<td>" + user.getGithubLogin() + "</td>");
+            pw.println("<td>" + user.getDescription() + "</td>");
             pw.println("</tr>");
         }
         pw.println("</table>");

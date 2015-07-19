@@ -10,6 +10,13 @@ import java.util.Date;
 @Entity
 @Table(name = "Customer")
 
+
+enum NotificationMethod {
+    EMAIL,
+    HTTP_POST
+}
+
+
 public class Customer {
 
     @Id
@@ -34,8 +41,10 @@ public class Customer {
     @Column(name = "notificationAddress")
     private String notificationAddress;
 
-    //@Column(name = "notificationMethod")
-    //private notificationMethod notificationMethod;
+
+    @Column(name = "notificationMethod")
+    @Enumerated(EnumType.STRING)
+    private NotificationMethod notificationMethod;
 
 
     public Long getId() {
@@ -92,5 +101,13 @@ public class Customer {
 
     public void setNotificationAddress(String notificationAddress) {
         this.notificationAddress = notificationAddress;
+    }
+
+    public NotificationMethod getNotificationMethod() {
+        return notificationMethod;
+    }
+
+    public void setNotificationMethod(NotificationMethod notificationMethod) {
+        this.notificationMethod = notificationMethod;
     }
 }
