@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -28,16 +29,25 @@ public class CustomerDaoImpl implements CustomerDao {
         return customer;
     }
 
-    public Customer findById(Long customerId){
-        return null;
+    @Override
+    public Customer findById(Long customerId) {
+        TypedQuery<Customer> namedQuery;
+        namedQuery = em.createNamedQuery("Customer.findById", Customer.class);
+        return namedQuery.getSingleResult();
     }
 
-    public Customer findActive(Long customerId){
-        return null;
+    @Override
+    public Customer findActive(Long customerId) {
+        TypedQuery<Customer> namedQuery;
+        namedQuery = em.createNamedQuery("Customer.findActive", Customer.class);
+        return namedQuery.getSingleResult();
     }
 
-    public List<Customer> findAll(){
-        return null;
+    @Override
+    public List<Customer> findAll() {
+        TypedQuery<Customer> namedQuery;
+        namedQuery = em.createNamedQuery("Customer.findAll", Customer.class);
+        return namedQuery.getResultList();
     }
 
     public void setEm(EntityManager em) {

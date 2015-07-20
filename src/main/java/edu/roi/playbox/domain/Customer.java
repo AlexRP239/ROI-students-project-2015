@@ -9,6 +9,13 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Customer")
+
+@NamedQueries({
+        @NamedQuery(name = "Customer.findAll", query = "SELECT c from Customer c"),
+        @NamedQuery(name = "Customer.findActive", query = "SELECT c from Customer c WHERE " +
+                "c.expired<CURRENT_TIMESTAMP and (c.blocked = FALSE or c.blocked is null)"),
+        @NamedQuery(name = "Customer.findById", query = "SELECT c FROM Customer c WHERE c.id = :id")
+})
 public class Customer {
 
     @Id
