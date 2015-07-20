@@ -11,24 +11,11 @@ import java.util.Date;
 @Entity
 @Table(name = "Payment", uniqueConstraints={@UniqueConstraint(columnNames={"customerId", "invoiceId"})})
 
-//enum PaymentStatus {
-//    INITIATED,
-//    POSTED,
-//    COMPLETED,
-//    ERROR,
-//    AUTHORIZATION_REQUIRED,
-//    CLEARED
-//}
-
-
 public class Payment {
 
     @Id
     @GeneratedValue
     private Long id;
-
-    @Enumerated(EnumType.STRING)
-    private PaymentStatus paymentStatus;
 
     @Column(name = "invoiceId")
     private String invoiceId;
@@ -36,13 +23,15 @@ public class Payment {
     @Column(name = "amount", precision = 10, scale = 2)
     private BigDecimal amount;
 
-    @Column(name = "customer")
+    @ManyToOne
     private Customer customer;
 
-    @Column(name = "account")
+    @ManyToOne
     private DestinationAccount account;
 
+
     @Column(name = "status")
+    @Enumerated(EnumType.STRING)
     private PaymentStatus status;
 
     @Column(name = "userAccountId")
