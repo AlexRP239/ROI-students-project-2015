@@ -9,14 +9,6 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Customer")
-
-
-enum NotificationMethod {
-    EMAIL,
-    HTTP_POST
-}
-
-
 public class Customer {
 
     @Id
@@ -111,4 +103,8 @@ public class Customer {
     public void setNotificationMethod(NotificationMethod notificationMethod) {
         this.notificationMethod = notificationMethod;
     }
+
+
 }
+
+
