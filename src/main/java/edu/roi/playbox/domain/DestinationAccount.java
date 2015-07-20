@@ -9,42 +9,10 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "DestinationAccount")
-//
-//enum PaymentMethod {
-//    CREDIT_CARD,
-//    BANK_ACCOUNT;
-//
-//    @Column(name = "displayName")
-//    private String displayName;
-//    @Column(name = "htmlTemplateName")
-//    private String htmlTemplateName;
-//    @Column(name = "serviceBeanName")
-//    private String serviceBeanName;
-//
-//    public String getDisplayName() {
-//        return displayName;
-//    }
-//
-//    public void setDisplayName(String displayName) {
-//        this.displayName = displayName;
-//    }
-//
-//    public String getServiceBeanName() {
-//        return serviceBeanName;
-//    }
-//
-//    public void setServiceBeanName(String serviceBeanName) {
-//        this.serviceBeanName = serviceBeanName;
-//    }
-//
-//    public String getHtmlTemplateName() {
-//        return htmlTemplateName;
-//    }
-//
-//    public void setHtmlTemplateName(String htmlTemplateName) {
-//        this.htmlTemplateName = htmlTemplateName;
-//    }
-//}
+
+@NamedQueries({
+        @NamedQuery(name = "DestinationAccount.findEnabled", query = "SELECT c from DestinationAccount c WHERE c.enabled is true ")
+})
 
 public class DestinationAccount {
 

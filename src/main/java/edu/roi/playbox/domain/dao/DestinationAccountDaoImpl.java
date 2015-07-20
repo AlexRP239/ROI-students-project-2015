@@ -5,6 +5,7 @@ import edu.roi.playbox.domain.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 /**
@@ -31,6 +32,7 @@ public class DestinationAccountDaoImpl implements DestinationAccountDao {
 
     @Override
     public List<DestinationAccount> findEnabled() {
-        return null;
+        TypedQuery<DestinationAccount> namedQuery = em.createNamedQuery("User.findActive",DestinationAccount.class);
+        return namedQuery.getResultList();
     }
 }
