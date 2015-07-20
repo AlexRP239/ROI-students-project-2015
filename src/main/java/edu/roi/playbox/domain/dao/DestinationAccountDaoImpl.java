@@ -23,6 +23,7 @@ public class DestinationAccountDaoImpl implements DestinationAccountDao {
         if (customer.getId() == null) {
             em.persist(customer);
         } else {
+
             customer = em.merge(customer);
         }
         return customer;

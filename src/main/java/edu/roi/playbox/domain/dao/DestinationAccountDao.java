@@ -14,6 +14,7 @@ public interface DestinationAccountDao {
      */
     DestinationAccount saveOrUpdate(DestinationAccount customer);
 
+
     /**
      * Возврашает спосок всех аккаунтов у который enabled = true
      */
