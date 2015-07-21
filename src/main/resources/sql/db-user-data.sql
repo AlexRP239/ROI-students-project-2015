@@ -9,5 +9,6 @@ INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('D
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Artem', 'Gorbachev', 'temayeah', 'danlapko', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Victoria', 'Lebedeva', 'vickyswan', 'danlapko', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Andrey', 'Smit', 'Iprogram2hours', 'danlapko', 'unknown');
+INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Evgenii', 'Bondarenko', 'Iprogram2hours', 'junior_eugen', 'unknown');
 
 -- and others todo: Victoria
