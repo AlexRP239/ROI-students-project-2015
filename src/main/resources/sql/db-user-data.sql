@@ -10,4 +10,4 @@ INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('D
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Artem', 'Gorbachev', 'temayeah', 'temagorbachev', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Victoria', 'Lebedeva', 'vickyswan', 'victoria9514', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Andrey', 'Smit', 'Iprogram2hours', 'a1413152', 'unknown');
-INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Evgenii', 'Bondarenko', 'Iprogram2hours', 'junior_eugen', 'unknown');
+INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Evgenii', 'Bondarenko', 'evgeshabond', 'junior_eugen', 'unknown');
