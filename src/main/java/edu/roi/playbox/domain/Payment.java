@@ -24,6 +24,7 @@ public class Payment {
     private BigDecimal amount;
 
     @ManyToOne
+    @JoinColumn(name = "customerId")
     private Customer customer;
 
     @ManyToOne

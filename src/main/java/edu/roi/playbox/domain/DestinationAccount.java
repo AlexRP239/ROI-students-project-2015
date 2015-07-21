@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Table(name = "DestinationAccount")
 
 @NamedQueries({
-        @NamedQuery(name = "DestinationAccount.findEnabled", query = "SELECT c from DestinationAccount c WHERE c.isTrue(enabled)")
+        @NamedQuery(name = "DestinationAccount.findEnabled", query = "SELECT c from DestinationAccount c WHERE c.enabled = true or c.enabled is null")
 })
 
 public class DestinationAccount {
