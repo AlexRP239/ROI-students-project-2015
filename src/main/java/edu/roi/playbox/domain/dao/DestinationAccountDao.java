@@ -2,11 +2,13 @@ package edu.roi.playbox.domain.dao;
 
 import edu.roi.playbox.domain.DestinationAccount;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
  * Created by AlexRP239 on 19.07.2015.
  */
+@Transactional
 public interface DestinationAccountDao {
 
     /**

@@ -2,9 +2,12 @@ package edu.roi.playbox.domain.dao;
 
 import edu.roi.playbox.domain.Payment;
 
+import javax.transaction.Transactional;
+
 /**
  * Created by AlexRP239 on 19.07.2015.
  */
+@Transactional
 public interface PaymentDao {
     /**
      * Сохраняет нового (если id == null) или обновляет существующего

@@ -2,10 +2,12 @@ package edu.roi.playbox.domain.dao;
 
 import edu.roi.playbox.domain.DestinationAccount;
 import edu.roi.playbox.domain.User;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 import java.util.List;
 
 /**
@@ -13,7 +15,8 @@ import java.util.List;
  */
 
 
-
+@Repository("DestinationAccountDao")
+@Transactional
 public class DestinationAccountDaoImpl implements DestinationAccountDao {
 
     @PersistenceContext
