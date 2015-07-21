@@ -25,6 +25,6 @@ public class CustomerDaoTest {
         List<Customer> customerList = customerDao.findAll();
 
         Assert.assertNotNull(customerList);
-        Assert.assertEquals(5, customerList.size());
+        Assert.assertEquals(4, customerList.size());
     }
 }
