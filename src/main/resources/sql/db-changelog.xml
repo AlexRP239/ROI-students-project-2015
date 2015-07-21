@@ -7,10 +7,16 @@
     <changeSet id="1" author="alexrp239" runOnChange="true">
         <comment>Load users from file</comment>
         <delete tableName="USER"/>
-        <delete tableName="CUSTOMER"/>
-        <delete tableName="DestinationAccount"/>
         <sqlFile path="db-user-data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="2" author="karlson35" runOnChange="true">
+        <delete tableName="CUSTOMER"/>
         <sqlFile path="db-customer-data.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="3" author="karlson35" runOnChange="true">
+        <delete tableName="DestinationAccount"/>
         <sqlFile path="db-destinationAccount-data.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
