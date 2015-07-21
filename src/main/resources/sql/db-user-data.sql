@@ -4,6 +4,7 @@ INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('A
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Artem', 'Yakovlev', 'Darkenery', 'iioqpuruc13', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Igor', 'Nikolaev', 'karlson35', 'karlson35rus', 'nikolaev.spbstu@gmail.com');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Danila', 'Lapko', 'danlapko', 'danlapko', 'danlapko@yandex.ru');
+INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Nikita', 'Koshmak', 'KoshmakNikita', 'shkedovic', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Oleg', 'Kozyrev', 'olezhek28', 'oleg19k4', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Daniil', 'Merkulov', 'DMerku', 'ch4mpl8', 'unknown');
 INSERT INTO USER(FIRSTNAME, LASTNAME, GITHUBLOGIN, SKYPELOGIN, EMAIL) VALUES ('Artem', 'Gorbachev', 'temayeah', 'temagorbachev', 'unknown');
