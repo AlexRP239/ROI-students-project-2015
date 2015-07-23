@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Error Description</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+Платеж на сумму: <span th:text="${amount}">amount</span> руб.<br>
+Организация: <span th:text="${customerExample.businessName}">customerExample.businessName</span> руб.<br>
+Номер заказа: <span th:text="${invoiceId}">invoiceId</span> руб.<br>
+Номер платежа: <span th:text="${transactionID}">transactionID</span> руб.<br>
+
+
+</body>
+</html>
