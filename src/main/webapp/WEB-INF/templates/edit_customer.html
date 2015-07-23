@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create customer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a href="/index.html" th:href="@{index}">На главную</a>&nbsp;
+<a href="/list_customers" th:href="@{list_customers}">Список всех заказчиков</a>
+
+<form action="#" method="post"  th:action="@{edit_customer}" th:object="${customer}">
+
+    <fieldset>
+        <legend>Заказчик</legend>
+        <table>
+            <tr>
+                <td><label for="id">id</label></td>
+                <td><input type="text" class="form-control" id="id" placeholder="id" th:field="*{id}" disabled="true"/></td>
+            </tr>
+            <tr>
+                <td><label for="businessName">Название</label></td>
+                <td><input type="text" class="form-control" id="businessName" placeholder="businessName"
+                           th:field="*{businessName}"/></td>
+            </tr>
+            <tr>
+                <td><label for="contact">Контактная информация</label></td>
+                <td><input type="text" class="form-control" id="contact" placeholder="contact" th:field="*{contact}"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="secretKey">Пароль</label></td>
+                <td><input type="text" class="form-control" id="secretKey" placeholder="contact"
+                           th:field="*{secretKey}"/></td>
+            </tr>
+            <tr>
+                <td><label for="blocked">Заблокирован</label></td>
+                <td><input type="checkbox" class="form-control" id="blocked" placeholder="blocked" th:field="*{blocked}"/></td>
+            </tr>
+
+            <!--
+                    <div>
+                        <label for="blocked">Пароль</label>
+                        <input type="text" class="form-control" id="secretKey" placeholder="contact" th:field="*{secretKey}"/>
+                    </div>
+            -->
+            <tr>
+                <td>
+                    <button type="submit">Сохранить</button>
+                </td>
+                <td>
+                    <!--<a href="#" th:href="@{expire_customer/__${customerId}__}">Удалить</a>-->
+                    <a href="#" th:href="@{list_customers}">К списку всех</a>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+</body>
+</html>

@@ -4,11 +4,12 @@
 <head>
     <title>Error Description</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" th:href="@{css/style.css}"/>
 </head>
 
 <body>
-К сожалению, произошла ощибка:<br>
-<span th:text="${errorText}">errorText</span>.<br>
-Вы не сможете продолжить :)<br>
+К сожалению, произошла ощибка:<br/>
+<span class="error" th:text="${errorDescription}">errorText</span>.<br/>
+Вы не сможете продолжить :)<br/>
 </body>
 </html>

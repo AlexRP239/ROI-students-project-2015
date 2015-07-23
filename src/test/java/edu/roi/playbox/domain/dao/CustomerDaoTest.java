@@ -2,6 +2,7 @@ package edu.roi.playbox.domain.dao;
 
 import edu.roi.playbox.domain.Customer;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class CustomerDaoTest {
     private CustomerDao customerDao;
 
     @Test
+    @Ignore
     public void testFindAll() {
         List<Customer> customerList = customerDao.findAll();
 

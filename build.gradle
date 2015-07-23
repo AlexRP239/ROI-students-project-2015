@@ -38,6 +38,8 @@ dependencies {
     compile 'org.hibernate:hibernate-entitymanager:4.3.10.Final'
     compile 'org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE'
     compile 'org.thymeleaf:thymeleaf:2.1.4.RELEASE'
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    compile 'org.hibernate:hibernate-validator:5.2.0.Final'
     runtime 'com.h2database:h2:1.4.+'
     providedCompile 'javax.servlet:javax.servlet-api:3.0.1'
     providedCompile 'javax.servlet:jsp-api:2.0'

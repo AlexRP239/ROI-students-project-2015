@@ -1,8 +1,10 @@
 package edu.roi.playbox.domain.dao;
 
+import edu.roi.playbox.domain.Customer;
 import edu.roi.playbox.domain.Payment;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 /**
  * Created by AlexRP239 on 19.07.2015.
@@ -15,5 +17,6 @@ public interface PaymentDao {
      */
     Payment saveOrUpdate(Payment customer);
 
+    Optional<Payment> findByInvoiceAndCustomer(Customer customer, String invoiceId);
     //todo: alexrp239 define other required methods
 }

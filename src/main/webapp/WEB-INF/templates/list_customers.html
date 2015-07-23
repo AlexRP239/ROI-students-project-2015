@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List customers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" th:href="@{css/style.css}"/>
+</head>
+<body>
+<table class="data_table">
+    <caption><h4>Список заказчиков</h4></caption>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Контактная информация</th>
+            <th>Статус</th>
+            <th>Действие</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="customer : ${customerList}">
+            <td th:text="${customer.id}">id</td>
+            <td th:text="${customer.businessName}">businessName</td>
+            <td th:text="${customer.contact}">contact</td>
+            <td>
+                <span class="valid" th:if="${customer.expired == null and customer.blocked != true}">Действует</span>
+                <span class="expired" th:if="${customer.expired != null}" th:text="${'Удален ' + #dates.format(customer.expired,'dd/MM/yyyy')}">Удален</span>
+                <span class="blocked" th:if="${customer.blocked == true}">Заблокирован</span>
+            </td>
+            <td><a href="#" th:href="@{edit_customer?customerId=__${customer.id}__}">Редактировать</a>
+<!--
+                <a href="#" th:unless="${customer.blocked}" th:href="@{list_customers?block=__${customer.id}__}">Заблокировать</a>
+                <a href="#" th:unless="${customer.expired != null}" th:href="@{list_customers?expire=__${customer.id}__}">Удалить</a>
+-->
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">Общее число заказчиков: <span th:text="${customerList.size()}">size()</span></td>
+            <td><a href="#" th:href="@{edit_customer}">Добавить</a></td>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>

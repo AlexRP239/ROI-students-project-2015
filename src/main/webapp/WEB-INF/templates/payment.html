@@ -7,11 +7,9 @@
 </head>
 
 <body>
-Платеж на сумму:  <span th:text="${amount}">amount</span> руб.<br>
-Организация: <span th:text="${customerExample.businessName}">customerExample.businessName</span> руб.<br>
-Номер заказа: <span th:text="${invoiceId}">invoiceId</span> руб.<br>
-Номер платежа: <span th:text="${transactionID}">transactionID</span> руб.<br>
-
-
+Платеж на сумму:  <span th:text="${payment.amount}">amount</span><br/>
+Организация: <span th:text="${payment.customer.businessName}">businessName</span><br/>
+Номер заказа: <span th:text="${payment.invoiceId}">invoiceId</span><br/>
+<!--Номер платежа: <span th:text="${payment.transactionID}">transactionID</span> руб.<br>-->
 </body>
 </html>

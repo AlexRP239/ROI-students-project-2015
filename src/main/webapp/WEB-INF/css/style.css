@@ -1,0 +1,21 @@
+table.data_table,  table.data_table td, table.data_table th  {
+    border : 1px solid;
+    border-collapse: collapse;
+    padding: 2px 5px 2px 5px;
+}
+
+.expired {
+    color: red;
+}
+
+.blocked {
+    color: brown;
+}
+
+.valid {
+    color: green;
+}
+
+.error {
+    color :red;
+}

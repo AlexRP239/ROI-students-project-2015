@@ -33,14 +33,17 @@ public class CustomerDaoImpl implements CustomerDao {
     public Customer findById(Long customerId) {
         TypedQuery<Customer> namedQuery;
         namedQuery = em.createNamedQuery("Customer.findById", Customer.class);
+        namedQuery.setParameter("id", customerId);
         return namedQuery.getSingleResult();
     }
 
     @Override
     public Customer findActive(Long customerId) {
-        TypedQuery<Customer> namedQuery;
-        namedQuery = em.createNamedQuery("Customer.findActive", Customer.class);
-        return namedQuery.getSingleResult();
+        Customer customer = findById(customerId);
+        if (!Boolean.TRUE.equals(customer.getBlocked()) && customer.getExpired() == null) {
+            return customer;
+        }
+        return null;
     }
 
     @Override
